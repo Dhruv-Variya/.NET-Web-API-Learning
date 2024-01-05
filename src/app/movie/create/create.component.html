@@ -1,0 +1,136 @@
+<div class="container">
+  <h1 class="text-centre" style="text-align: center;">Add Another Movie Detail</h1>
+  <a href="/movie/index"class="btn btn-primary" style="margin: 10px;">Home Page</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- title: -->
+    <div class="form-group">
+      <label for="title">Movie Title:</label>
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="form-control"
+      />
+      <div
+        *ngIf="f['title'].touched && f['title'].invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f['title'].errors && f['title'].errors['required']">
+          Title is required
+        </div>
+      </div>
+    </div>
+    <!-- Releasedate: -->
+    <div class="form-group">
+      <label for="releaseDate">ReleaseDate</label>
+      <input
+        type="date"
+        id="releaseDate"
+        formControlName="releaseDate"
+        class="form-control"
+      />
+      <div
+        *ngIf="f['releaseDate'].touched && f['releaseDate'].invalid"
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="f['releaseDate'].errors && f['releaseDate'].errors['required']"
+        >
+          Date is required
+        </div>
+      </div>
+    </div>
+    <!-- genre: -->
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input
+          type="text"
+          id="genre"
+          formControlName="genre"
+          class="form-control"
+        />
+        <div
+          *ngIf="f['genre'].touched && f['genre'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['genre'].errors && f['genre'].errors['required']">
+            genre is required
+          </div>
+        </div>
+      </div>
+      <!-- cast: -->
+      <div class="form-group">
+        <label for="cast">cast</label>
+        <input
+          type="text"
+          id="cast"
+          formControlName="cast"
+          class="form-control"
+        />
+        <div
+          *ngIf="f['cast'].touched && f['cast'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['cast'].errors && f['cast'].errors['required']">
+            Cast is required
+          </div>
+        </div>
+      </div>
+      <!-- language: -->
+      <div class="form-group">
+        <label for="lang">Language</label>
+        <input
+          type="text"
+          id="lang"
+          formControlName="lang"
+          class="form-control"
+        />
+        <div
+          *ngIf="f['lang'].touched && f['lang'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['lang'].errors && f['lang'].errors['required']">
+            language is required
+          </div>
+        </div>
+      </div>
+      <!-- rating: -->
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input
+          type="number"
+          id="rating"
+          formControlName="rating"
+          class="form-control"
+        />
+        <div
+          *ngIf="f['rating'].touched && f['rating'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['rating'].errors && f['rating'].errors['required']">
+            rating is required
+          </div>
+        </div>
+      </div>
+      <!-- trailer: -->
+      <div class="form-group">
+        <label for="treailerURL">Trailer-Link</label>
+        <input
+          type="text"
+          id="treailerURL"
+          formControlName="treailerURL"
+          class="form-control"
+        />
+        <div
+          *ngIf="f['treailerURL'].touched && f['treailerURL'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['treailerURL'].errors && f['treailerURL'].errors['required']">
+            trailer URL is required
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="margin: 10px;" type="submit" [disabled]="!form.valid">Post</button>
+  </form>
+</div>
